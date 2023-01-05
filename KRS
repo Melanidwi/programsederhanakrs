@@ -1,0 +1,65 @@
+#include <iostream>
+using namespace std;
+int i=0;
+string mata_kuliah[10];
+int kode[10],sks[10],pilih[10],j_sks;
+int selesai=false;
+void daftar_menu()
+{
+	cout<<"          DAFTAR MATA KULIAH TEKNIK INFORMOATIKA SEMESTER 2              \n";
+	cout<<"1. 21000004   FISIKA               JUMLAH SKS=3\n";
+	cout<<"2. 21000013   KEWARGANEGARAAN      JUMLAH SKS=2\n";
+	cout<<"3. 21000015   BAHASA INGGRIS 2     JUMLAH SKS=2\n";
+
+	cout<<"4. 21062003   DISKRIT MATEMATIKA   JUMLAH SKS=3\n";
+	cout<<"5. 21062004  REKAYASA PERANGKAT LUNAK  JUMLAH SKS=3\n";
+	cout<<"6. 21062101  STRUKTUKTUR DATA      JUMLAH SKS=3 \n";
+	cout<<"7. 21062102  ARSITEKTUR DAN ORGANISASI KOMPUTER JUMLAH SKS=3\n";
+	cout<<"8. 21062105  PRAKTIKUM STRUKTUR DATA   JUMLAH SKS=1\n";
+	cout<<"Tekan 0 jika selesai melakukan pilihan\n";
+	cout<<"-----------------------------------------------------------"<<endl<<endl;
+}
+ int main()
+ {
+	daftar_menu();
+	while(selesai==false){
+		cout<<"Mata kuliah yang anda ingin ambil adalah menu ke-";
+		cin>>pilih[i];
+		
+		if(pilih[i]<=8){
+			
+			if(pilih[i]==0){
+				selesai=true;
+			}else{
+
+
+				switch(pilih[i]){
+					case 1:kode[i]=21000004;mata_kuliah[i]="FISIKA";sks[i]=3;break;
+					case 2:kode[i]=21000013;mata_kuliah[i]="KEWARGANEGARRAN";sks[i]=2;break;
+					case 3:kode[i]=21000015;mata_kuliah[i]="BAHASA INGGRIS 2";sks[i]=2;break;
+					case 4:kode[i]=21062003;mata_kuliah[i]="DISKRIT MATEMATIKA";sks[i]=3;break;
+					case 5:kode[i]=21062004;mata_kuliah[i]="REKAYASA PERANGKAT LUNAK";sks[i]=3;break;
+					case 6:kode[i]=21062101;mata_kuliah[i]="STRUKTUR DATA";sks[i]=3;break;
+			        case 7:kode[i]=21062103;mata_kuliah[i]="ARSIKTEKTUR DAN ORGANISASI KOMPUTER";sks[i]=3;break;
+			        case 8:kode[i]=21062105;mata_kuliah[i]="PRAKTIKUM STRUKTUR DATA";sks[i]=1;break;
+					}
+					cout<<"KODE MATA KULIAH:"<<kode[i]<<endl;
+					cout<<"MATA KULIAH:"<<mata_kuliah[i]<<endl;
+					cout<<"JUMLAH SKS:"<<sks[i]<<endl;
+					cout<<"-----------------------------------------------------------"<<endl<<endl;
+					j_sks+=sks[i];
+					i++;
+				}
+					}else{
+						cout<<"MATA KULIAH TIDAK TERDAFTAR DI  MENU"<<endl;
+					}	
+			}
+			cout<<"----------------------------------------------------------------------"<<endl;
+			cout<<"NO|KODE| MATA KULIAH|      SKS"<<endl;
+			for(int a=0;a<i;a++){
+			     cout<<"------------------------------------------------------------------"<<endl;
+			     cout<<a+1<<"|"<<kode[a]<<"|"<<mata_kuliah[a]<<" |"<<sks[a]<<endl;
+			}
+			cout<<"------------------------------"<<endl;
+			cout<<"Jumlah sks yang di ambil:"<<j_sks;
+		}
